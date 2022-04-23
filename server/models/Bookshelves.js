@@ -7,91 +7,75 @@ import { stripHtml } from "string-strip-html";
  * the front-end of student portfolio piece, this works fine.
  */
 import starterBookshelves from "../assets/starterBookshelves.js";
-let Bookshelves;
+let shelves = cloneDeep(starterBookshelves);
 
-/**
- * For testing
- */
-const resetBookshelf = () => {
-  Bookshelves = cloneDeep(starterBookshelves);
-};
-
-const getBookshelf = (userId) => {
-  const skeleton = {
-    wantToRead: [],
-    currentlyReading: [],
-    read: [],
-  };
-  return Bookshelves.reduce((bookshelf, book) => {
-    const { userId: bookUserId, ...restOfBook } = book;
-    if (bookUserId === userId) {
-      bookshelf[book.shelf].push(restOfBook);
-    }
-    return bookshelf;
-  }, skeleton);
-};
-
-const getBook = (userId, bookId) => {
-  const book = Bookshelves.find(
-    (book) => book.id === bookId && book.userId === userId
-  );
-  if (book) {
-    const { userId, ...restOfBook } = book;
-    return restOfBook;
+class Bookshelves {
+  static getBookshelf(userId) {
+    const skeleton = {
+      wantToRead: [],
+      currentlyReading: [],
+      read: [],
+    };
+    return shelves.reduce((bookshelf, book) => {
+      const { userId: bookUserId, ...restOfBook } = book;
+      if (bookUserId === userId) {
+        bookshelf[book.shelf].push(restOfBook);
+      }
+      return bookshelf;
+    }, skeleton);
   }
-  return book;
-};
 
-const hasBook = (userId, bookId) => {
-  return !!getBook(userId, bookId);
-};
+  static getBook(userId, bookId) {
+    const book = shelves.find(
+      (book) => book.id === bookId && book.userId === userId
+    );
+    if (book) {
+      const { userId, ...restOfBook } = book;
+      return restOfBook;
+    }
+    return book;
+  }
 
-const findShelfForBook = (userId, bookId) => {
-  const book = getBook(userId, bookId);
-  return book ? book.shelf : "none";
-};
+  static hasBook(userId, bookId) {
+    return !!Bookshelves.getBook(userId, bookId);
+  }
 
-const structureBook = (bookId, volumeInfo, shelf) => {
-  if (!["wantToRead", "currentlyReading", "read", "none"].includes(shelf))
-    throw new Error(`Shelf "${shelf}" does not exist`);
+  static findShelfForBook(userId, bookId) {
+    const book = Bookshelves.getBook(userId, bookId);
+    return book ? book.shelf : "none";
+  }
 
-  return {
-    id: bookId,
-    ...volumeInfo,
-    description: volumeInfo.description
-      ? stripHtml(volumeInfo.description).result
-      : "",
-    shelf,
-  };
-};
+  static structureBook(bookId, volumeInfo, shelf) {
+    if (!["wantToRead", "currentlyReading", "read", "none"].includes(shelf))
+      throw new Error(`Shelf "${shelf}" does not exist`);
 
-const insertBook = (userId, bookId, volumeInfo, shelf) => {
-  Bookshelves.push({
-    ...structureBook(bookId, volumeInfo, shelf),
-    userId,
-  });
-};
+    return {
+      id: bookId,
+      ...volumeInfo,
+      description: volumeInfo.description
+        ? stripHtml(volumeInfo.description).result
+        : "",
+      shelf,
+    };
+  }
 
-const deleteBook = (userId, bookId) => {
-  Bookshelves = Bookshelves.filter(
-    (book) => !(book.id === bookId && book.userId === userId)
-  );
-};
+  static insertBook(userId, bookId, volumeInfo, shelf) {
+    shelves.push({
+      ...Bookshelves.structureBook(bookId, volumeInfo, shelf),
+      userId,
+    });
+  }
 
-const updateBookshelf = (userId, bookId, volumeInfo, shelf) => {
-  deleteBook(userId, bookId);
-  insertBook(userId, bookId, volumeInfo, shelf);
-};
+  static deleteBook(userId, bookId) {
+    shelves = shelves.filter(
+      (book) => !(book.id === bookId && book.userId === userId)
+    );
+  }
 
-resetBookshelf();
+  static updateBookshelf(userId, bookId, volumeInfo, shelf) {
+    Bookshelves.deleteBook(userId, bookId);
+    Bookshelves.insertBook(userId, bookId, volumeInfo, shelf);
+  }
+}
 
-export {
-  getBookshelf,
-  getBook,
-  hasBook,
-  findShelfForBook,
-  structureBook,
-  deleteBook,
-  updateBookshelf,
-};
 export default Bookshelves;

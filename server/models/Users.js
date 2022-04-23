@@ -18,13 +18,17 @@ const renameProperties = (user) => {
   };
 };
 
-const find = (id) => renameProperties(Users.find((user) => user.id === id));
+class Users {
+  static find(id) {
+    return renameProperties(users.find((user) => user.id === id));
+  }
 
-const findByCredentials = (username, password) => {
-  const user = Users.find((user) => {
-    return user.nameOfUser === username && user.wordOfPassage === password;
-  });
-  return user ? renameProperties(user) : user;
-};
+  static findByCredentials(username, password) {
+    const user = users.find((user) => {
+      return user.nameOfUser === username && user.wordOfPassage === password;
+    });
+    return user ? renameProperties(user) : user;
+  }
+}
 
-export { find, findByCredentials };
+export default Users;
