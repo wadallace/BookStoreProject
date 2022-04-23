@@ -44,45 +44,12 @@ router
         });
 
       const userId = user.id.toString();
-      req.session.userId = userId;
 
       return res.status(200).send({
         message: "You did it! Success!",
         token: generateToken(userId),
       });
     }, 500);
-  })
-  .all(methodNotAllowedError);
-
-router
-  .route("/signout")
-  .delete((req, res) => {
-    // TODO require JWT
-    if (req.session) req.session.destroy();
-
-    return res.status(200).send({
-      message: "You did it! Success!",
-    });
-  })
-  .all(methodNotAllowedError);
-
-router
-  .route("/refresh")
-  .get((req, res) => {
-    const sendUnauthorized = () =>
-      res.status(401).send({
-        message:
-          "Unauthorized. This means that you do not have a session or your session expired. (Your session will be lost when you restart the authentication server). To renew your session, you will need to signin again.",
-      });
-
-    if (!req.session || !req.session.userId) return sendUnauthorized();
-    const user = Users.find(req.session.userId);
-    if (!user) return sendUnauthorized();
-
-    return res.status(200).send({
-      message: "You did it! Success!",
-      token: generateToken(req.session.userId),
-    });
   })
   .all(methodNotAllowedError);
 

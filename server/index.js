@@ -2,7 +2,6 @@
  * The server is for the Book Store project
  * @author AlbanyCanCode
  */
-import { SESSION_SECRET, SESSION_EXPIRY_IN_MILLISECONDS } from "./config";
 import { fileURLToPath } from "url";
 import path from "path";
 import fs from "fs";
@@ -21,20 +20,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 
 app.use(express.json());
-app.use(
-  session({
-    secret: SESSION_SECRET,
-    resave: true,
-    saveUninitialized: true,
-    rolling: true,
-    cookie: {
-      httpOnly: true,
-      sameSite: true,
-      secure: false, // Normally, we would want this to be true
-      maxAge: SESSION_EXPIRY_IN_MILLISECONDS,
-    },
-  })
-);
 
 // Error handler
 app.use((err, req, res, next) => {

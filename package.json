@@ -11,7 +11,6 @@
   "dependencies": {
     "axios": "^0.26.1",
     "express": "^4.17.3",
-    "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "lodash.clonedeep": "^4.5.0",
     "string-strip-html": "^9.1.11"
