@@ -1,10 +1,10 @@
-const { expect } = require("chai");
-const rewire = require("rewire");
+import rewire from "rewire";
+import { expect } from "chai";
 
-const Bookshelves = require("../../models/Bookshelves");
-const testBooks = require("../testData/testBooks..json");
+import Bookshelves from "../../models/bookshelves.js";
+import testBooks from "../testData/testBooks.js";
 
-const bookshelfRewire = rewire("../../models/Bookshelves");
+const bookshelfRewire = rewire("../../models/Bookshelves.js");
 const resetBookshelf = bookshelfRewire.__get__("resetBookshelf");
 
 describe("models/Bookshelves.js", () => {

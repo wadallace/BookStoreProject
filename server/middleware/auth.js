@@ -1,8 +1,8 @@
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
 
-const { JWT_SECRET } = require("../config");
+import { JWT_SECRET } from "../config.js";
 
-const getUserId = (req) => {
+export const getUserId = (req) => {
   try {
     const { authorization } = req.headers;
 
@@ -18,7 +18,7 @@ const getUserId = (req) => {
   return undefined;
 };
 
-const auth = (req, res, next) => {
+export const auth = (req, res, next) => {
   const userId = getUserId(req);
   if (!userId) {
     return res.status(401).send({
@@ -27,5 +27,3 @@ const auth = (req, res, next) => {
     });
   } else next();
 };
-
-module.exports = { getUserId, auth };

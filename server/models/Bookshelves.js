@@ -1,12 +1,12 @@
-const cloneDeep = require("lodash.clonedeep");
-const stripHtml = require("string-strip-html").stripHtml;
-const starterBookshelves = require("../assets/starterBookshelves.json");
+import cloneDeep from "lodash.clonedeep";
+import { stripHtml } from "string-strip-html";
 
 /**
  * Usually, we would store our data in a database instead of a plain text file
  * that we are committing to git. However, for the purposes of demonstrating
  * the front-end of student portfolio piece, this works fine.
  */
+import starterBookshelves from "../assets/starterBookshelves.js";
 let Bookshelves;
 
 /**
@@ -85,7 +85,7 @@ const updateBookshelf = (userId, bookId, volumeInfo, shelf) => {
 
 resetBookshelf();
 
-module.exports = {
+export {
   getBookshelf,
   getBook,
   hasBook,
@@ -94,3 +94,4 @@ module.exports = {
   deleteBook,
   updateBookshelf,
 };
+export default Bookshelves;

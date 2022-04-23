@@ -1,6 +1,6 @@
-const { expect } = require("chai");
+import { expect } from "chai";
 
-const Users = require("../../models/Users");
+import Users from "../../models/Users.js";
 
 describe("models/Users.js", () => {
   describe("find()", () => {
@@ -30,7 +30,7 @@ describe("models/Users.js", () => {
     });
 
     it("should return undefined if no user is found", () => {
-      const user = Users.find("harry", "nogo");
+      const user = Users.findByCredentials("harry", "nogo");
       expect(user).to.equal(undefined);
     });
   });

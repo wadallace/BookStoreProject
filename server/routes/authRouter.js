@@ -1,12 +1,12 @@
-const express = require("express");
-const jwt = require("jsonwebtoken");
+import express from "express";
+import jwt from "jsonwebtoken";
 
-const Users = require("../models/Users");
+import Users from "../models/Users.js";
 
-const methodNotAllowedError = require("../errors/methodNotAllowed");
-const { auth } = require("../middleware/auth");
+import methodNotAllowedError from "../errors/methodNotAllowed.js";
+import { auth } from "../middleware/auth.js";
 
-const { JWT_SECRET, JWT_EXPIRY_IN_MILLISECONDS } = require("../config");
+import { JWT_SECRET, JWT_EXPIRY_IN_MILLISECONDS } from "../config.js";
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router
   .post((req, res) => {
     // Slowing down so that you can see if the button has been disabled
     setTimeout(() => {
-      const { username = undefined, password = undefined } = req.body;
+      const { username, password } = req.body;
 
       if (!username || !password) {
         return res.status(400).send({
@@ -86,4 +86,4 @@ router
   })
   .all(methodNotAllowedError);
 
-module.exports = router;
+export default router;

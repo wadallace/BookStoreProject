@@ -2,20 +2,21 @@
  * The server is for the Book Store project
  * @author AlbanyCanCode
  */
-const path = require("path");
-const fs = require("fs");
-const express = require("express");
-const session = require("express-session");
-const { SESSION_SECRET, SESSION_EXPIRY_IN_MILLISECONDS } = require("./config");
+import { SESSION_SECRET, SESSION_EXPIRY_IN_MILLISECONDS } from "./config";
+import { fileURLToPath } from "url";
+import path from "path";
+import fs from "fs";
+import express from "express";
 
-const authRouter = require("./routes/authRouter");
-const bookshelfRouter = require("./routes/bookshelfRouter");
-const bookSearchRouter = require("./routes/bookSearchRouter");
-const bookRouter = require("./routes/bookRouter");
+import authRouter from "./routes/authRouter.js";
+import bookshelfRouter from "./routes/bookshelfRouter.js";
+import bookSearchRouter from "./routes/bookSearchRouter.js";
+import bookRouter from "./routes/bookRouter.js";
 
-const fileNotFoundError = require("./errors/fileNotFound");
+import fileNotFoundError from "./errors/fileNotFound.js";
 
 const PORT = process.env.PORT || 3001;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 

@@ -1,9 +1,9 @@
-const express = require("express");
-const axios = require("axios");
-const Bookshelves = require("../models/Bookshelves");
-const { getUserId } = require("../middleware/auth");
+import express from "express";
+import axios from "axios";
+import Bookshelves from "../models/Bookshelves.js";
+import { getUserId } from "../middleware/auth.js";
 
-const methodNotAllowedError = require("../errors/methodNotAllowed");
+import methodNotAllowedError from "../errors/methodNotAllowed.js";
 
 const router = express.Router();
 
@@ -32,4 +32,4 @@ router
   })
   .all(methodNotAllowedError);
 
-module.exports = router;
+export default router;

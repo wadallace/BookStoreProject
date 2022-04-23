@@ -4,4 +4,4 @@ const fileNotFound = (req, res) => {
   });
 };
 
-module.exports = fileNotFound;
+export default fileNotFound;

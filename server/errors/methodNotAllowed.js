@@ -4,4 +4,4 @@ const methodNotAllowed = (req, res) => {
   });
 };
 
-module.exports = methodNotAllowed;
+export default methodNotAllowed;

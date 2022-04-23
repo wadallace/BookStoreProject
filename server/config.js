@@ -1,4 +1,4 @@
-const { generateRandomString } = require("./util.js");
+import { generateRandomString } from "./util.js";
 
 /**
  * Typically, the JWT secret would be within a vault or encrypted in environmental variables.
@@ -7,12 +7,10 @@ const { generateRandomString } = require("./util.js");
  * and to avoid being flagged as not secure by GitHub,
  * I generating the JWT token so that it is not hardcoded.
  */
-const JWT_SECRET = generateRandomString();
-const SESSION_SECRET = generateRandomString();
+const jwtSecret = generateRandomString();
+const sessionSecret = generateRandomString();
 
-module.exports = {
-  JWT_SECRET,
-  JWT_EXPIRY_IN_MILLISECONDS: 57600000, // 16 hours (normally, this would be 15 minutes for applications with sensitive data)
-  SESSION_SECRET,
-  SESSION_EXPIRY_IN_MILLISECONDS: 5400000, // 90 minutes
-};
+export const JWT_SECRET = jwtSecret;
+export const JWT_EXPIRY_IN_MILLISECONDS = 86400000; // 24 hours (normally, this would be 15 minutes for applications with sensitive data)
+export const SESSION_SECRET = sessionSecret;
+export const SESSION_EXPIRY_IN_MILLISECONDS = 5400000; // 90 minutes

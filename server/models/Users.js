@@ -1,5 +1,3 @@
-const starterUsers = require("../assets/users.json");
-
 /**
  * Usually, we would store our users in a database instead of a plain text file
  * that we are committing to git. However, for the purposes of demonstrating
@@ -9,7 +7,7 @@ const starterUsers = require("../assets/users.json");
  * I called username "nameOfUser" and password "wordOfPassage"
  * to stop Github from flagging this as not secure because it is hardcoded.
  */
-const Users = starterUsers;
+import users from "../assets/users.js";
 
 const renameProperties = (user) => {
   if (!user) return user;
@@ -29,4 +27,4 @@ const findByCredentials = (username, password) => {
   return user ? renameProperties(user) : user;
 };
 
-module.exports = { find, findByCredentials };
+export { find, findByCredentials };
