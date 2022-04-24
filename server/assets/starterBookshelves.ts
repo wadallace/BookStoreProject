@@ -1,4 +1,6 @@
-const startBookshelves = [
+import { IBook } from "../models/Bookshelves";
+
+const startBookshelves: IBook[] = [
   {
     id: "qKydDAAAQBAJ",
     userId: "2725",

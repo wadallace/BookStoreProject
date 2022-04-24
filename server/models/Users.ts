@@ -7,27 +7,27 @@
  * I called username "nameOfUser" and password "wordOfPassage"
  * to stop Github from flagging this as not secure because it is hardcoded.
  */
-import users from "../assets/users.js";
+import users from "../assets/users";
 
-const renameProperties = (user) => {
-  if (!user) return user;
-  return {
-    id: user.id,
-    username: user.nameOfUser,
-    password: user.wordOfPassage,
-  };
-};
+export interface IUser {
+  id: string;
+  username: string;
+  password: string;
+}
 
 class Users {
-  static find(id) {
-    return renameProperties(users.find((user) => user.id === id));
+  static find(id: string): IUser {
+    const user = users.find((user) => user.id === id);
+    if (!user) throw new Error("User not found");
+    return user;
   }
 
-  static findByCredentials(username, password) {
+  static findByCredentials(username: string, password: string): IUser {
     const user = users.find((user) => {
-      return user.nameOfUser === username && user.wordOfPassage === password;
+      return user.username === username && user.password === password;
     });
-    return user ? renameProperties(user) : user;
+    if (!user) throw new Error("User not found");
+    return user;
   }
 }
 

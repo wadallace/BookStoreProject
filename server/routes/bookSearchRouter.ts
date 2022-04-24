@@ -1,18 +1,18 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import axios from "axios";
-import Bookshelves from "../models/Bookshelves.js";
-import { getUserId } from "../middleware/auth.js";
+import Bookshelves, { IVolume } from "../models/Bookshelves";
+import { getUserId } from "../middlewares/auth";
 
-import methodNotAllowedError from "../errors/methodNotAllowed.js";
+import methodNotAllowedError from "../errors/methodNotAllowed";
 
-import Cache from "../cache.js";
+import Cache from "../cache";
 const searchCache = new Cache();
 
 const router = express.Router();
 
 router
   .route("/:bookTitle")
-  .get((req, res) => {
+  .get((req: Request, res: Response) => {
     const { bookTitle } = req.params;
     const userId = getUserId(req);
 
@@ -38,7 +38,8 @@ router
                 books: [],
               });
             } else {
-              const books = response.data.items.map((book) => {
+              const books = response.data.items.map((book: IVolume) => {
+                // @ts-ignore
                 const shelf = Bookshelves.findShelfForBook(userId, book.id);
                 return Bookshelves.structureBook(
                   book.id,

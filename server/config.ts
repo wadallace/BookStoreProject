@@ -1,4 +1,4 @@
-import { generateRandomString } from "./util.js";
+import { generateRandomString } from "./util";
 
 /**
  * Typically, the JWT secret would be within a vault or encrypted in environmental variables.

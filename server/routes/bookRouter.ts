@@ -1,20 +1,21 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import axios from "axios";
-import Bookshelves from "../models/Bookshelves.js";
-import { getUserId } from "../middleware/auth.js";
+import Bookshelves from "../models/Bookshelves";
+import { getUserId } from "../middlewares/auth";
 
-import methodNotAllowedError from "../errors/methodNotAllowed.js";
+import methodNotAllowedError from "../errors/methodNotAllowed";
 
 const router = express.Router();
 
 router
   .route("/:bookId")
-  .get((req, res) => {
+  .get((req: Request, res: Response) => {
     const { bookId } = req.params;
     const userId = getUserId(req);
     axios
       .get(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
       .then((response) => {
+        // @ts-ignore
         const shelf = Bookshelves.findShelfForBook(userId, bookId);
         const book = Bookshelves.structureBook(
           bookId,

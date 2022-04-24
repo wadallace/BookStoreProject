@@ -1,22 +1,22 @@
-import express from "express";
-import jwt from "jsonwebtoken";
+import express, { Request, Response, NextFunction } from "express";
+import * as jwt from "jsonwebtoken";
 
-import Users from "../models/Users.js";
+import Users, { IUser } from "../models/Users";
 
-import methodNotAllowedError from "../errors/methodNotAllowed.js";
-import { auth } from "../middleware/auth.js";
+import methodNotAllowedError from "../errors/methodNotAllowed";
+import { auth } from "../middlewares/auth";
 
-import { JWT_SECRET, JWT_EXPIRY_IN_MILLISECONDS } from "../config.js";
+import { JWT_SECRET, JWT_EXPIRY_IN_MILLISECONDS } from "../config";
 
 const router = express.Router();
 
-const generateToken = (userId) => {
+const generateToken = (userId: string): string => {
   return jwt.sign({ sub: userId }, JWT_SECRET, {
     expiresIn: `${JWT_EXPIRY_IN_MILLISECONDS}ms`,
   });
 };
 
-router.use((req, res, next) => {
+router.use((req: Request, res: Response, next: NextFunction) => {
   if (/\/signout/.test(req.path)) {
     return auth(req, res, next);
   }
@@ -25,7 +25,7 @@ router.use((req, res, next) => {
 
 router
   .route("/signin")
-  .post((req, res) => {
+  .post((req: Request, res: Response) => {
     // Slowing down so that you can see if the button has been disabled
     setTimeout(() => {
       const { username, password } = req.body;
@@ -37,11 +37,14 @@ router
         });
       }
 
-      const user = Users.findByCredentials(username, password);
-      if (!user)
+      let user: IUser;
+      try {
+        user = Users.findByCredentials(username, password);
+      } catch (err) {
         return res.status(401).send({
           message: "Unauthorized. Your username or password is not correct.",
         });
+      }
 
       const userId = user.id.toString();
 

@@ -1,14 +1,16 @@
 class Cache {
-  constructor(...args) {
+  cache: any[];
+
+  constructor(...args: any) {
     this.cache = args || [];
   }
-  add(item) {
+  add(item: any): void {
     this.cache.push(item);
   }
-  isLast(item) {
+  isLast(item: any): boolean {
     return this.cache[this.cache.length - 1] === item;
   }
-  clear() {
+  clear(): void {
     this.cache = [];
   }
 }

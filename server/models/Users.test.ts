@@ -1,4 +1,4 @@
-import Users from "./Users.js";
+import Users from "./Users";
 
 describe("find()", () => {
   it("should return the user if a user with a matching user id exists", () => {
@@ -10,9 +10,9 @@ describe("find()", () => {
     });
   });
 
-  it("should return undefined if no user is found", () => {
-    const user = Users.find("1234");
-    expect(user).toBeUndefined();
+  it("should throw an error if no user is found", () => {
+    const fn = () => Users.find("1234");
+    expect(fn).toThrow();
   });
 });
 
@@ -27,7 +27,7 @@ describe("isValidCredentials()", () => {
   });
 
   it("should return undefined if no user is found", () => {
-    const user = Users.findByCredentials("harry", "nogo");
-    expect(user).toBeUndefined();
+    const fn = () => Users.findByCredentials("harry", "nogo");
+    expect(fn).toThrow();
   });
 });
