@@ -1,3 +1,4 @@
+import produce from "immer";
 import { stripHtml } from "string-strip-html";
 
 /**
@@ -6,18 +7,18 @@ import { stripHtml } from "string-strip-html";
  * the front-end of student portfolio piece, this works fine.
  */
 import starterBookshelves from "../assets/starterBookshelves";
-let shelves = starterBookshelves;
+let shelves = [] as IBook[];
 
 type ShelfTypes = "wantToRead" | "currentlyReading" | "read";
 
 export interface IVolume {
-  id: string;
   title: string;
   description?: string;
   [key: string]: any;
 }
 
 export interface IBook extends IVolume {
+  id: string;
   userId: string;
   shelf?: ShelfTypes;
 }
@@ -77,46 +78,52 @@ class Bookshelves {
       return undefined;
     }
   }
-  static structureBook(
-    bookId: string,
-    volumeInfo: IVolume,
-    shelf: ShelfTypes | undefined
-  ): IBookshelfBook {
-    const book: IVolume = {
-      ...volumeInfo,
-      id: bookId,
-      description: volumeInfo.description
-        ? stripHtml(volumeInfo.description).result
-        : "",
-      ...{ shelf: shelf || undefined },
-    };
-    return book;
-  }
   static insertBook(
     userId: string,
     bookId: string,
     volumeInfo: IVolume,
     shelf: ShelfTypes
-  ) {
-    shelves.push({
-      ...Bookshelves.structureBook(bookId, volumeInfo, shelf),
+  ): void {
+    const description = volumeInfo.description
+      ? stripHtml(volumeInfo.description).result
+      : null;
+    const book: IBook = {
+      id: bookId,
+      ...volumeInfo,
+      ...(description && { description }),
       userId,
+      shelf,
+    };
+    shelves = produce(shelves, (draftState) => {
+      draftState.push(book);
+      return draftState;
     });
   }
-  static deleteBook(userId: string, bookId: string) {
-    shelves = shelves.filter(
-      (book) => !(book.id === bookId && book.userId === userId)
-    );
+  static deleteBook(userId: string, bookId: string): void {
+    shelves = produce(shelves, (draftState) => {
+      draftState = draftState.filter(
+        (book) => !(book.id === bookId && book.userId === userId)
+      );
+      return draftState;
+    });
   }
   static updateBookshelf(
     userId: string,
     bookId: string,
     volumeInfo: IVolume,
     shelf: ShelfTypes
-  ) {
+  ): void {
     Bookshelves.deleteBook(userId, bookId);
     Bookshelves.insertBook(userId, bookId, volumeInfo, shelf);
   }
+  static refreshBookshelf(): void {
+    shelves = produce(shelves, (draftState) => {
+      draftState = starterBookshelves;
+      return draftState;
+    });
+  }
 }
+
+Bookshelves.refreshBookshelf();
 
 export default Bookshelves;

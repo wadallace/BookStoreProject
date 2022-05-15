@@ -7,19 +7,21 @@ import methodNotAllowedError from "../errors/methodNotAllowed";
 import { getUserId, auth } from "../middlewares/auth";
 
 const router = express.Router();
+router.use(getUserId);
 router.use(auth);
 
 router
   .route("/:bookId/:shelf")
   .put((req: Request, res: Response) => {
     const { bookId, shelf } = req.params;
+    const { userId } = req.body;
+
     if (!["wantToRead", "currentlyReading", "read"].includes(shelf)) {
       return res.status(400).send({
         message: `Pst! Shelf '${shelf}' is not an option. Your shelf should be either 'wantToRead', 'currentlyReading', or 'read'.`,
       });
     }
 
-    const userId = getUserId(req);
     try {
       // @ts-ignore
       const book = Bookshelves.getBook(userId, bookId);
@@ -40,7 +42,7 @@ router
           return res.send({ books });
         })
         .catch((err) => {
-          console.error(err);
+          // TODO log
           return res
             .status(404)
             .send({ message: `No book with book ID ${bookId} found.` });
@@ -53,20 +55,21 @@ router
   .route("/:bookId")
   .delete((req: Request, res: Response) => {
     const { bookId } = req.params;
+    const { userId } = req.body;
 
-    const userId = getUserId(req);
-    // @ts-ignore
-    const book = Bookshelves.getBook(userId, bookId);
-    if (!book) {
-      return res.status(404).send({
-        message: `No book with book ID ${bookId} found in your bookshelf.`,
-      });
-    } else {
+    try {
+      // @ts-ignore
+      const book = Bookshelves.getBook(userId, bookId);
       // @ts-ignore
       Bookshelves.deleteBook(userId, book.id);
       // @ts-ignore
       const bookshelf = Bookshelves.getBookshelf(userId);
       return res.send({ books: bookshelf });
+    } catch (err) {
+      // TODO log
+      return res.status(404).send({
+        message: `No book with book ID ${bookId} found in your bookshelf.`,
+      });
     }
   })
   .all(methodNotAllowedError);
@@ -74,7 +77,7 @@ router
 router
   .route("/")
   .get((req: Request, res: Response) => {
-    const userId = getUserId(req);
+    const { userId } = req.body;
     // @ts-ignore
     const bookshelf = Bookshelves.getBookshelf(userId);
     res.send({ books: bookshelf });

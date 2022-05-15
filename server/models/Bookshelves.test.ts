@@ -1,6 +1,10 @@
 import Bookshelves from "./Bookshelves";
 import testBook from "../tests/data/books";
 
+beforeEach(() => {
+  Bookshelves.refreshBookshelf();
+});
+
 describe("getBookshelf()", () => {
   it("should return a user's entire bookshelf", () => {
     const bookshelf = Bookshelves.getBookshelf("2725");
@@ -101,32 +105,6 @@ describe("findShelfForBook()", () => {
   it("should return undefined if the book is on a shelf, but on another user's bookshelf", () => {
     const shelf = Bookshelves.findShelfForBook("2725", "oy3psgEACAAJ");
     expect(shelf).toBeUndefined();
-  });
-});
-
-describe("structureBook()", () => {
-  it("should return book data with id, volume information, description with HTML tags removed, and the shelf", () => {
-    const book = Bookshelves.structureBook(
-      "wZ69DwAAQBAJ",
-      testBook,
-      "wantToRead"
-    );
-    expect(book).toMatchObject({
-      id: "wZ69DwAAQBAJ",
-      title: "Salmon",
-      shelf: "wantToRead",
-      description:
-        "WINNER OF THE JOHN AVERY AWARD AT THE ANDRÉ SIMON AWARDS Over the centuries, salmon have been a vital resource, a dietary staple and an irresistible catch. But there is so much more to this extraordinary fish. As Mark Kurlansky reveals, salmon persist as a barometer for the health of our planet. Centuries of our greatest assaults on nature can be seen in their harrowing yet awe-inspiring life cycle. Full of all Kurlansky’s characteristic curiosity and insight, Salmon is a magisterial history of a wondrous creature.",
-    });
-  });
-
-  it("should not return the user ID", () => {
-    const book = Bookshelves.structureBook(
-      "wZ69DwAAQBAJ",
-      testBook,
-      "wantToRead"
-    );
-    expect(Object.keys(book)).not.toContain("userId");
   });
 });
 

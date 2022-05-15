@@ -1,20 +1,12 @@
 import express, { Request, Response, NextFunction } from "express";
-import * as jwt from "jsonwebtoken";
 
 import Users, { IUser } from "../models/Users";
 
 import methodNotAllowedError from "../errors/methodNotAllowed";
 import { auth } from "../middlewares/auth";
-
-import { JWT_SECRET, JWT_EXPIRY_IN_MILLISECONDS } from "../config";
+import { generateAccessToken } from "../services/authServices";
 
 const router = express.Router();
-
-const generateToken = (userId: string): string => {
-  return jwt.sign({ sub: userId }, JWT_SECRET, {
-    expiresIn: `${JWT_EXPIRY_IN_MILLISECONDS}ms`,
-  });
-};
 
 router.use((req: Request, res: Response, next: NextFunction) => {
   if (/\/signout/.test(req.path)) {
@@ -50,7 +42,7 @@ router
 
       return res.status(200).send({
         message: "You did it! Success!",
-        token: generateToken(userId),
+        token: generateAccessToken(userId),
       });
     }, 500);
   })

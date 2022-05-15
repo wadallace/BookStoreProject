@@ -1,7 +1,6 @@
 import express, { Request, Response } from "express";
 import axios from "axios";
-import Bookshelves, { IVolume } from "../models/Bookshelves";
-import { getUserId } from "../middlewares/auth";
+import { IVolume } from "../models/Bookshelves";
 
 import methodNotAllowedError from "../errors/methodNotAllowed";
 
@@ -14,7 +13,6 @@ router
   .route("/:bookTitle")
   .get((req: Request, res: Response) => {
     const { bookTitle } = req.params;
-    const userId = getUserId(req);
 
     if (bookTitle.length < 2) {
       searchCache.clear();
@@ -38,15 +36,11 @@ router
                 books: [],
               });
             } else {
-              const books = response.data.items.map((book: IVolume) => {
-                // @ts-ignore
-                const shelf = Bookshelves.findShelfForBook(userId, book.id);
-                return Bookshelves.structureBook(
-                  book.id,
-                  book.volumeInfo,
-                  shelf
-                );
-              });
+              const books = response.data.items.map(
+                ({ id, volumeInfo }: IVolume): IVolume => {
+                  return { id, ...volumeInfo };
+                }
+              );
               return res.send({ status: "complete", books });
             }
           });

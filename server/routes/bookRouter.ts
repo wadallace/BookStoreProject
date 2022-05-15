@@ -9,23 +9,24 @@ const router = express.Router();
 
 router
   .route("/:bookId")
-  .get((req: Request, res: Response) => {
+  .get(getUserId, (req: Request, res: Response) => {
     const { bookId } = req.params;
-    const userId = getUserId(req);
+    const { userId } = req.body;
+
     axios
       .get(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
       .then((response) => {
         // @ts-ignore
         const shelf = Bookshelves.findShelfForBook(userId, bookId);
-        const book = Bookshelves.structureBook(
-          bookId,
-          response.data.volumeInfo,
-          shelf
-        );
+        const book = {
+          id: bookId,
+          ...response.data.volumeInfo,
+          ...(shelf && { shelf }),
+        };
         return res.send({ book });
       })
       .catch((err) => {
-        console.error(err);
+        // TODO log error when not found
         return res
           .status(404)
           .send({ message: `No book with book ID ${bookId} found.` });
