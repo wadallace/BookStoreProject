@@ -42,15 +42,15 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE72CJjBi7ZO24EvsvYPzG-t8c5n7MCK2jFMEbJs8DBWl1U8KH3VdOpMEQQnoltbwz0rgIWAYWrjcRKcTB3-r7mU6RRBDRoSKOnY5WmNRvY_ab3YFRFr4Ln4Pk2BjhC2IQNc33VDJ&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73IB_7-fpiUWHUyQFkfCQxrhp-1a51nXXCTmuIHqonQa1G7MKhqqr8BftphqrVsMBFuki5wksJab_YHCU4aO047--hYqLF3tRhONQl0wIe_2cEzA_vjhrDWbOThiYwV6jPPH8Q9&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70XNPTjzHVSm1fhqs574DpeoXQ1P8cypCUHy5UGqTl12e6XkrfmWwYuWVzD6guPkH0ykWct7zl6DLWfb4rUojmsMwJ8-Th_U9SdQgbIHE7P6a9ptsioXPqipt4hlJIH8QYf4w4D&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73SZ_O9jgyqN063ob5_2IAe_Ly1LTU38uQ3ry7iHDRLiYK9L2C0D3XaAt99O8tDfL2nXPdGsKlxyUxen0Ovi5uFe3DfBpY8qhQ8hLAyvVruIXXjzsN5PsWGQReGX9GFYsRkpODJ&source=gbs_api",
       small:
-        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72oLEQHAFFowfwVQTiGXHXIYxy26_JqFB0Bjmso-sA0NDkD5oXgCg4jxiAO5XaZ-7yZK0SQIMxjA0FUngFS_n5J5i1Ezb7Q1M28hDNm5Vjb7yNHeUvanNa0AbIR0IzDPquN4GGR&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71v_HeR3_lgD5BN4I8iE_wgIvwfoU9IH99jVPxGlJFeBlrCrzTKlge5Tei6yhwonOl5B9dGa_jHmvHJu-AcBMrPyzjhILvFgahRCiN6-CZGWyEn9YRhGdMxZ3WD3wjV_dQjxcjo&source=gbs_api",
       medium:
-        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72KUnsAWDDcqmVqtxEw--iyLjenxlOUpZkCwfrJY-GreysZP3YQGJMz2Ejqt88HAQdkfr5y06bzh0z_t6l3ZxJYa60chtVb9EdVaMMTi19fRq16waNFQ4svDzZwZjk0iG4P5N12&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE738g4QIsAVjzSKOO-5yFVpxaMerNC7XQaLdFmhK2VnsSl7Pdg9Yin_5kIf3_GKyd4kdYfiz5GBPRFhS4e3m0OFI86l8Dwwi5Mj8XrCEVF5pkkf3Jhe-4z4hg3wuesw3nC97b-oH&source=gbs_api",
       large:
-        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE73FKBDg_2GM2qXeqSPX-i-GJzPP9XX3VdBFal9_Jdw0TDdbVucQ4Bq_TyiZ4wQpaNjvqblA9sg4_m-EH0wYbP8z2zcZCPxjPUfNqbIN59ZXHD300881Uq9NmYAQu0J_ap1ghOmV&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=qKydDAAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70HX-Ethj1H7hiyg8LGJLbbscGN2XoQXUzM9oi_cIyMzf556U0NxpUnVVkqXP9ouEfhZatFni2Wx1xF09CxQ2vAbJWUVhhPKJqzhIEIw-hj_ZATs_yspG4IraLhMKz2_s0zNj7l&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -101,17 +101,17 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE71ajG2Nl3S-QkLSUbJ0WYicAteIOP1AeRrw1pHhk4ux8jexXfYkahrcL9qNifaCmA83fhjqDnE4C1T2KD2MR9it11irx0pv5nmctuLfHgCXgcm1_q1-Vv5hlDhfHu1cvh4N-YYS&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE72gIodc2lbpLplcCWAd8kQD9NPuh-xOvRHq-eRAnVeUnQ0613_2CaFe5MFmOT84RtQoqcsNoJ6GojxOiinvhVQPjWXalo-gxWjfgcnzrEu5P2Xbd5kaVpPLIlGN6GD0ihBhvD1n&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE706G4-e4s_cQvOLPbIN-EzY_gGh0nWpW3sTb5OOUNUuoizMySbdeUOEUEhjhv3cIePcd0OsDPKNKDPHGpyiazmOCvl4zNGJ4hXBYrW2fCN2LI5u_QBDWBkapZTGrFFvWpyZx6vY&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE70ic3fZyMCLQWXmkU1-fI_GyTx5EmQKr5DH5cl3wyx_fCVVFEzYjpblBeXMn5FbCal9S0lo-zH0I3TkD5bxhEhIUakaVuf4slDUb5uxjTqi1QGZcCA3GdCtwkyM2Wt5a1LCo1te&source=gbs_api",
       small:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE71QgIRDHB5VpGPDE3L81JszsznqiIzchmdItvbfYyEkd9zNfvPVlXRxJ1HPBkB-5PZlBJTh9nm8TSZYRR11pZqUUs5od9pq1jndjo5VXxShjmRRD8xrjhhWWHLpN9Y5pc2j4zhx&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73biniRPjYFkA63_pd8Mx3Hi60lkwS0sJWeNhU18j1gJdrGGzD_9fO_bBLi2AUnnUiDTY-vDvdQ6lcy1nnyo9MzT10s53l2mmyMsHTCvOXM7yuFcYwqnOk3viwn5gR_EftT1aTK&source=gbs_api",
       medium:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE720dvBlQCY-miAt0cjdriyK7gmUqBRpnSV1yZTPZY2SL9Jxlphl6ERgg89lDNyl2GJT4UVjQEpYxz93b3yJh9Vze-0K43BivPitj3k0vXvgu0ms99jGYbQN_N7CqUasjUqF-cVe&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70way8ZAsPMH1UZ383ZrD2lVyUzhW-2tFW6R3QWLsdG0DKCkhn8UO11QNz3-z-ic7HusbLnnwmVd_XRLSaNY4hIdNsr766em2G3OHnps8CWhfl9KdRBJqZV6bQvUqAzGulEIbbn&source=gbs_api",
       large:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70ULxxfW8kfQf-yLge6Gxfxpser-9MiRgi1fNr8T09_8E8CkStV0eSCZvhMdRbvvaxeV5dgiW0YL4FrSz6yKrUWtvcfFeoLMVgJku_rqlVbM-IHKO6TEfmNJ8izzJm1SUy1o-Kq&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70t0tpFP4VhPlMMQ3hrVDYl8ZlADRZzL0ZaOQMgZ_uTMgV40Vp_JmxU2jQPuefhUVgMkIOQxH96in7-ZtJhheSeolIVsK7BnX-rkw8B4PjcodaP_FIpPH64FKPDqAE_GFR8Bw1L&source=gbs_api",
       extraLarge:
-        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE71tYI2HUBSHQiX7QZszH14IjIpRjyIwcQ3cEB2bVcNMq6V1lxiLc3LHKn2DRnvLCcJP_7kjLRT_YHnqJjQGBidyxVmoSLiH2LpRWGuWBDlCYXdZ92Yc0flPgxmi4iLEFTVjlsrN&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=A1QoDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE739EjMN7LAaLt2UI_DvriiNB32ayDxBURZGQoJEw3NwqxZIUa4jQux1D0586NScQk5-nHi_oc8rasCoAisWjDVyb2TetW_f2s0ukS0Wb4KTZJSd70sehMwaXr2E4aHlw3wi-7w6&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -165,17 +165,17 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73xF8eZOJfkKCb8KIN4cbwDE5MrBIRn-4OpbdjXhE-feykz6pN489v1rttoV7MaH5L6rBT1_RSC38VnyHFb9h-j0ek_y1Sgzz3TJ8_zV0RYBE94yhjsmg7I9HMnpQPOy_7XDyTN&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70GA6eqZW_omC7tg9UfmQtMx4T4qrDITODC8xlKRyIYo2HB82dbSJBVbD6TfWAPbUz2svyLkmhAouE6_oiplTdL0Mg5myxjKKU0LlAqT1JUsGQPJyHFQI3o6_z3GA8K4kdb_G3P&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71fC8ucn-ZQ5ZA_92o50wdAE9TuXQxZDBQgmU0en9sk6rukmQbMjlQr2EggyY5P7LLoKt7q3-N2Q_TPJRKBboZPTnBCFbhutWCjCKkvpoDAHMvVAOhKcget1B2KXLeK5rNwOd03&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE7335LzlH_f4Gk5T33ruQPU7EGAtc2AFTX8-I2Sof2FOUhq-0FdRiyHZXNUVH0cylGttXxSpsvFLcEehUdJP8PthjoJIkOaaGXzcUPWMRbRu6D2mkXN7OQHDmH6zg0XmGcxuwasb&source=gbs_api",
       small:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE72KHA_yecS3uA3cLbWRU_RPcHOiOU4MRffUYLccotC0Xii8WyQSYxRI8EzFypZOjA5IN7vBpLeZ0v-KZUBRriIJ121eB0Xd5YIzk2Wk-gZQiWu8GVruAvwtcQmtrfGrj9isA2fD&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE70uvTpD6REAx78hkcZ09piBf-HWVn5v9zEykgpum9kjqWziT4oNpKm2CV6Q7hW-D25NaWhNuVI46cmITcU1AwCu8EhgfVUIYmDNRy4meg6Y07NSeUepK3kQ6z-or20H48KvSk84&source=gbs_api",
       medium:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE70FDrkoD8EyPUaZkhW13m5c_lOmV-V2LwebEblKZoNZBG45QY8-vJ3Rwx4ZDSx6zu8fLVZmgbPvbZn3oKBoTf0gbKJUUOhCdr2mSwQrypdtrdPr6ufSU7yRuZ-FOg3ZXaA4VEr6&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE7257eWFUYjvt90XjVjz8TuohliQqTKM52x5gxr2zxeO-c6t0rLUGwRi0YqMv5QohAKJKLtyNovwOEjiqcJpVRIt9JtCAf-lBeF-x8MZUdoUWvmWoyIZmF4CFca-OOZUZav2lyqh&source=gbs_api",
       large:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE738hn_C7doNz2HKLNBg-SA3DCM7mplxgqrA4j9JWkwvrYRDZJ8JeLpvtENBZojjU6BvT3Nq-hyxi7BmdeuGkkTllTqECugQAMpdZuMSoTA0BKx1mz2cU8kuitFV_YUF1dJxRXWe&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70i2ux62Bm9brPvIt9wkoGtPf2O12cnJG9-vfT1yLoBJldVHx0MJ_Q6n7aq5NEK7rvQt-aKFZ2aeolB6LX4iZHd-KCQ62XbM4ap3goPrNW6MAAhlB-BjFdYOjUVK4VZ3TCLI2Ck&source=gbs_api",
       extraLarge:
-        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE72iQ35mmrWfVTxKDDXjUHWl1ulD0FLBs6-pM3hWugC7DUIQufo0EuEb5RXw6p_EFIQAbEk1-QFWek5MKoTJ3yLSuRa16J0YlOOAKMmai2VFqAkDy1ATIAAK_JTkHbwI3EgLEfe9&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=aHo3DwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70YnfJMMjhfKptR8NVJoxw1PgvnjSIGraFYrnxe1eML7JbqFSVDVLFRMjaPb4FfhEN0iGbIEST1XLUa8tzKxnrxkDdc376ebREYb9ZHsUsxArrXhiBOZKfGjtzoRLTGfbPFzxVv&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -231,9 +231,9 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE71N-1kN1ZNF2CjfF91QTk7oFPG3DMGw45jZlcJE7CniUsO4yelaUvM_q3i_bGWfnUrhiEfjQGflGsDbWLgwFejZOWaFZEHCj56xo3cGXbebRkaTm0JEziyZQ9hlBZTxwlXLoFTC&source=gbs_api",
+        "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE70t1vnyAfohTjXuPgqoQNM4TfJkVHRpJLIZHYvXLrRgouCJuq8Yx7fh67hXGLNd0jrwCjl51n9xV2RibbgH32pyN-YYVqJMKxhIws3NO82SPTji16mtAhQv1uPs776erHf_9MEl&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70YMrUplFGacSwf9hy7Q87HLUcCj1lnuBaiUMaJvwi_kbvpYn1Io0EWmkCoFNmxY878MCvT4IoD6Qulltjf-zfANFBzW9JNoKyUtgd-jheveYB6pzMLqsYtjxwqujtUqZkYIr1V&source=gbs_api",
+        "http://books.google.com/books/content?id=ppjUtAEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE71N-xWtxzuJJTx4uIzILrU3BiF4sKq81uxbnepPnR6VtBo0tUBJABfG-TBhoA-trqwyseSs3YeMdkc12sKOKA4WZl3YKaxDR2Efe_G1ReKb6nMkHpyW8h85kW53xc2JAIJx4Vif&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -253,7 +253,7 @@ const startBookshelves: IBook[] = [
     publisher: "No Starch Press",
     publishedDate: "2014-12-07",
     description:
-      "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications. Eloquent JavaScript, 2nd Edition dives deep into the JavaScript language to show you how to write beautiful, effective code. Author Marijn Haverbeke immerses you in example code from the start, while exercises and full-chapter projects give you hands-on experience with writing your own programs. As you build projects such as an artificial life simulation, a simple programming language, and a paint program, you’ll learn: –The essential elements of programming, including syntax, control, and data –How to organize and clarify your code with object-oriented and functional programming techniques –How to script the browser and make basic web applications –How to use the DOM effectively to interact with browsers –How to harness Node.js to build servers and utilities This edition is thoroughly revised and modernized to reflect the current state of Java­Script and web browsers, with brand-new material, such as a chapter on code performance in Java­Script, and expanded coverage of recursion and closures. All source code is available online in an inter­active sandbox, where you can edit the code, run it, and see its output instantly. Isn’t it time you became fluent in the language of the Web? Includes an exclusive chapter, only available in the No Starch Press edition!",
+      "JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games. Though simple for beginners to pick up and play with, JavaScript is a flexible, complex language that you can use to build full-scale applications. Eloquent JavaScript, 2nd Edition dives deep into the JavaScript language to show you how to write beautiful, effective code. Author Marijn Haverbeke immerses you in example code from the start, while exercises and full-chapter projects give you hands-on experience with writing your own programs. As you build projects such as an artificial life simulation, a simple programming language, and a paint program, you’ll learn: –The essential elements of programming, including syntax, control, and data –How to organize and clarify your code with object-oriented and functional programming techniques –How to script the browser and make basic web applications –How to use the DOM effectively to interact with browsers –How to harness Node.js to build servers and utilities This edition is thoroughly revised and modernized to reflect the current state of Java\u00adScript and web browsers, with brand-new material, such as a chapter on code performance in Java\u00adScript, and expanded coverage of recursion and closures. All source code is available online in an inter\u00adactive sandbox, where you can edit the code, run it, and see its output instantly. Isn’t it time you became fluent in the language of the Web? Includes an exclusive chapter, only available in the No Starch Press edition!",
     industryIdentifiers: [
       {
         type: "ISBN_10",
@@ -272,8 +272,8 @@ const startBookshelves: IBook[] = [
     printedPageCount: 478,
     printType: "BOOK",
     categories: [
-      "Computers / Programming Languages / JavaScript",
-      "Computers / Programming Languages / General",
+      "Computers / Languages / JavaScript",
+      "Computers / Languages / General",
       "Computers / Programming / General",
     ],
     maturityRating: "NOT_MATURE",
@@ -285,17 +285,17 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE708hZ_5-y8LriyICIOZMSEgd0F7cI42_exL3qnzWSSDy1k06JfDif1zwNH8M7DTFkM6PQAabJG6Ffu2Av_RRZGyNsi4emnG7JY0IyoB76lGf6Hy9nyEPyBKrLh5G5y0AbI99mpy&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE73ijr80stWcvdhdGuQ8Jb35sHT11a00LjnYTOsFJF6PFby8TfypxMkIZRCycVqb1BCYxFu_pEsJfLf8iH1rpSsOb5zBX-rcPYfvMHu1z5Y5gkh4S6aXi7vIJONeOQvclYtn5a3C&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE71PBI6Nnp8AYY-oIFD1znBgnL5HmJpg-CkGdqqVwYLsfa89bl8CK9jIkasrvoCx96fkkijXXUOHPCzYQz9VN8yOGCTgG632rAUs3fOg99syVFihi8d3Lnv-VtndcZ9d5aO7-mWA&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72kXYor1pmCazd4HrdzUWCVImGdG8RNsl7Qd5KjAnWKPlnzS-ik2XOtm2USmobqFeYqVKrfoheX2g9hlbik64vDgpFkV5PZEMJRRHs80kLWjDryBldBFJX80JariQvciuhm305s&source=gbs_api",
       small:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE735L4Hnd-_kBUVnFySnkA5VPzF0FiCj19k3BEQNPIwGtLP_69DUm9GujLUGmU25dQl_xukvcHXbApcvDNfhInvw9N90CYZbTyL4OrYWXlisBnq8PYkTjnr2TeTHQCq3kjGn2U5U&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73jtJ5a8SXIr6pvd2oQhPzxeXx4oJ9o6zoeCjNGSDFHu4HWtp5F1LYT0M4hrhycrOIRXRDVicw5f7CItNX5balvN94-TzX1eunE0cKvdT3-ONLlsy9bDVPvNwmAXvfsqCtdRELR&source=gbs_api",
       medium:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71eSGG6uaE-ikSeVC03Z6qAl7ZHpFkJ2u_YtENcPOdCSgXMbfz3sUCwRnW-GZqU9NlmzNuxmUA-BLudL-29VTJDm8rUMseNUNWajXMfQ09cG29ycojNy--YqRbKs9YeYQ1yXdvn&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE72csozDspw0Y7JCkXQuwE7BxmHUhFXhxxwflBVK8i9mfljKVhqzsv9xlGQqj8OA8A8gPsulIq4jHqwy8hh_2mHajfq0JzeX-tgmW07iqXjmuYrau9U3Drdlx578oOQv9MPOnTOC&source=gbs_api",
       large:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE70WS7s-n_BdxqIpCP0SlYeTM2TjXl-mHCCUS3RqqAAMtPhE66yBt4EgrtpsoSgHx7-qKIiwwvZG_bv5569koZgJAxbHOWPZ2k5luU47hwoO3GN__Gl7ZGwn8Bp3IdYTqLNoyfLZ&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=4&edge=curl&imgtk=AFLRE71q3peNoaf8WSja2psH9K1jcEMFfvo5jiWR5h3jO5xEu2HaTsh7iZ2qXP-SmZBNk_uGPbZSQ8Cf9NHmSVVN0yDJ_odT-1mmXXbUgZxeY7PvNc33m_q5yJGvFONWjdEXb_THNEUx&source=gbs_api",
       extraLarge:
-        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE73exv0Z8gvGxv0kMs0_Aslw4ZnxmUbbbluUeC7jaQOAPimd_PecHQKvdwaOo0ckoMszVPKsfCeD-wSzuKkdt7QV5JWihIFlHzReBNEnvsJCaE6ImSVa-g1bIAVXQOLFEDqWGTF0&source=gbs_api",
+        "http://books.google.com/books/publisher/content?id=dgYvDwAAQBAJ&printsec=frontcover&img=1&zoom=6&edge=curl&imgtk=AFLRE70rXIOyAKPr_aWzNT7d1OqZteHcq6WDDherVDeR4K6XBoDKPLYbpRWTzjtolmsF7PeGQ6ZreJctkMTJ55_xOtd3l8ZEW7AfPK8UQcq2NvOsLc7F8vitMNIrqrvq8bvkx9tze8dM&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -351,13 +351,13 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE707AKMHn-lGCNXp80sJL9flR3-PzOC5kE6phb7nQuPY9Y7uq8z3aGmU0RangPg1kdiQoskt5mElMY_cFBDKAnssmIT-qXAHYMvjPrPi4SLy0rxGfQ3zERCUzDi-pqlyiOdJOggF&source=gbs_api",
+        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=5&edge=curl&imgtk=AFLRE70MPC2wlq70_DHGSqqbyS2RWIXiEryLMa9_Tel62XoEdcPkxPWO8IhnDNF0jVOKJM6li-k9az8gXgBLq4W_M5JK5geN8KAteC8cD1ArjmK_itPnv4fkPMPfTKIoS8gBRSbRFNEi&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73nW2_7qHxYwqjSzyACyOs_CyaKV_h0N667WNHBpreACsL7__aDzb9A6fI547yFn1UV-aQ_nizNt4DcHWouKeO8Gr_YJFgXFJfeLdMGnIbb4TnYFrtLbB7qIJX3q8TASR5mQ8yy&source=gbs_api",
+        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE72qVNxU_hUkEwm9gkrPimT_FCyeyxn2gnVjL1VTn-7KRoiOwJmjxj7JTBBu8U9m2lNA81uvh8ZMIf_oCfJoWjl7PgBOWZItYRngGUx11zyXBhfJ-XcCUHJqMaRQPHrb2730ui6C&source=gbs_api",
       small:
-        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73RZcdPW-jAVbC3bpe8tIxUsAHcmwfJCnz_jS4tRE2uWqyyHwVyZZyRQN68V_SbI1ZQzDMrpBmG8oZoLjaHSJxY5-WE6Aj8D_xeQndltvQvaKZ_RtsDxK4CymCiDjmibWdsA5Wj&source=gbs_api",
+        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=2&edge=curl&imgtk=AFLRE73V9jntsrUjTyMH5EIczT4hN-cANKL-kax7adkM5zGeKvvXvrUh6ID8U5MiOu1-yuCBP5N98snD3NPFfHBuA3d98rzmwqiqANDyElUN-Hp0bp8JrvasxR69tf9MBoERZWATT3bi&source=gbs_api",
       medium:
-        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71wFqPMATC0Ys_W_orMHLS9fAoO2DyLFTq8tNYuKRBepNUFCZkri21pDQhAD0T48SDwa_I7PkUo8SNQD5zcQv99FnWJVpjV6RI_iG-TzmN3NoFY8cddVGkMbz30v1nZoB0zSpv1&source=gbs_api",
+        "http://books.google.com/books/content?id=YhdU8thA6eEC&printsec=frontcover&img=1&zoom=3&edge=curl&imgtk=AFLRE71YchGTXGhdjSPvaM12yORWlnzalJENzUShG90EeWMh1EDKLjCr4aTf481mqSYO7j-Z9CWId1maVuZbo8BC7LymPnoKjm0kIAPmIpy3kgpm1nsbi206qdrNCXG36rR0hrTLoqg_&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -408,9 +408,9 @@ const startBookshelves: IBook[] = [
     },
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/content?id=F9wIMQAACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE722gOfKZ222XcSsiXzpAPER8zK0KakISREs6mEXmnjt4LDp2hKza0g2ouSFXthU6Nd1tt8tVHscOTsw2gtuCQNSaY1VseA3NOBeOb5VHxhPt2FwYRzK-E1diSRwaXUe0fOPn2uc&source=gbs_api",
+        "http://books.google.com/books/content?id=F9wIMQAACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE71s7i92jpkSwBbeDghxatCsjLmrHQmmRDvlnVJTk5HYzqb-_uZNFnXa7HH490qLU8WnmRD3Bwm8tXAdfUGiOIyHsy1tcqzw-G9GIvMR_K6L3GiW9GFE_dims1Mh2UlxWTJkIayB&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/content?id=F9wIMQAACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE720m1-NH8XyOwsei6iOmkontjNrL0Qv65j-ckpXkfVEXqsfgsAnawXdaGN6MgIWIaVQG22_RGD76N3vRPKsWgPSSmQzDS_4KK9u9jjwjCggPyQE-5yczPMdnwTW036ZKr1GIBoU&source=gbs_api",
+        "http://books.google.com/books/content?id=F9wIMQAACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE7158WsgzKwhP8ZJslHZB-qZnfTYvBVuzQXkiky6z8aQHNgV41AX2Vb6ZD6W5ueSom6cGGUUnVovRiF09UZUU9gJ35ETmfroN_XWCDdssmomRgvSN0sIV0GSUqbLtGviLThSVvGu&source=gbs_api",
     },
     language: "en",
     previewLink:
@@ -458,9 +458,9 @@ const startBookshelves: IBook[] = [
     contentVersion: "preview-1.0.0",
     imageLinks: {
       smallThumbnail:
-        "http://books.google.com/books/content?id=oy3psgEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE71wJOaCkrbecY_WTHnoHD9ammJ5zrilQB8ePL3G7sXR3vVPFH1ucMhxqnEJ_Zws5wAy6Oy38ZhJAbrwC-srr2tYK0ZonWkKgpeRSk8UaXV6fYtgr-gKu15cpag1twqwOHXs6Lri&source=gbs_api",
+        "http://books.google.com/books/content?id=oy3psgEACAAJ&printsec=frontcover&img=1&zoom=5&imgtk=AFLRE73tPcXkcleIp8oK5uVQT2s3PblfnS5htBZItSzfYR14bUs3ZDykZj4wTsRT9s8QdSyjLUzBfs7yBpkm0sfkHqAnSCNrV07tmxGjD9PCUyAJvt7rsDazSb7oSjunhtPtAx3AAuYc&source=gbs_api",
       thumbnail:
-        "http://books.google.com/books/content?id=oy3psgEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70Z7VTv7XV2mNgT2aveLlpbORLycEPjv5h7_Ib4SutqfzPE5IwhPfbc8pz2YUgpA81DfHq-8Nqrb2pij7L_EWiqnV9hP9pkXhvnG-lH5a2XOmKNNt1G6f9RphvSHU_nap2cd9P8&source=gbs_api",
+        "http://books.google.com/books/content?id=oy3psgEACAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE73g-GaGr0MWJmkjQyVdpDzHN08T6b3RZfBaMPoEgpcwZiNcgbgNE_1qA50UVpsB4RAJlDBoQTzeAibY7bLQuCYGtW9f6oVckmLg_n-48HTOEh8HFhlpRoX47RTWy5dYNwKr_ymN&source=gbs_api",
     },
     language: "en",
     previewLink:

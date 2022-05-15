@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import axios from "axios";
 import Bookshelves from "../models/Bookshelves";
 import { getUserId } from "../middlewares/auth";
+import { stripHtml } from "string-strip-html";
 
 import methodNotAllowedError from "../errors/methodNotAllowed";
 
@@ -18,9 +19,13 @@ router
       .then((response) => {
         // @ts-ignore
         const shelf = Bookshelves.findShelfForBook(userId, bookId);
+        const description = stripHtml(
+          response.data.volumeInfo?.description
+        ).result;
         const book = {
           id: bookId,
           ...response.data.volumeInfo,
+          ...{ description },
           ...(shelf && { shelf }),
         };
         return res.send({ book });
