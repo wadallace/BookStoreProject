@@ -28,8 +28,21 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-app.use(express.static(resolve("../client/build")));
+/**
+ * `npm run build` transform your project into static assets:
+ * - index.html
+ * - single .js file (or multiple if you use code splitting)
+ * - CSS files
+ * - image files
+ * - favicon
+ * - manifest
+ * This line "serves" or shares your static files that you created with "npm run build".
+ */
+app.use(express.static(resolve("./client/build")));
 
+/**
+ * APIs
+ */
 app.use("/api/bookshelf", bookshelfRouter);
 app.use("/api/book/search", bookSearchRouter);
 app.use("/api/book", bookRouter);
@@ -37,8 +50,11 @@ app.use("/api/", authRouter);
 app.all("/api/*", fileNotFoundError);
 
 app.get("*", (_, res: Response) => {
-  if (existsSync(resolve("../client/build", "index.html"))) {
-    return res.sendFile(resolve("../client/build", "index.html"));
+  if (existsSync(resolve("./client/build", "index.html"))) {
+    /**
+     * Routes all other GET requests that are not a part of your API above to your React app, where React Router will handle all other routes
+     */
+    return res.sendFile(resolve("./client/build", "index.html"));
   }
   const text =
     "Its running!\nTo use the API, please refer to the Project README.md.";

@@ -1,5 +1,6 @@
 # Adding
 .nvmrc
+client/build/
 *NOCOMMIT*
 
 # Created by https://www.toptal.com/developers/gitignore/api/node,react,visualstudiocode,sublimetext,windows,macos
