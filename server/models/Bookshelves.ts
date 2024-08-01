@@ -1,4 +1,3 @@
-import produce from "immer";
 import { stripHtml } from "string-strip-html";
 
 /**
@@ -94,18 +93,13 @@ class Bookshelves {
       userId,
       shelf,
     };
-    shelves = produce(shelves, (draftState) => {
-      draftState.push(book);
-      return draftState;
-    });
+    shelves = structuredClone(shelves);
+    shelves.push(book);
   }
   static deleteBook(userId: string, bookId: string): void {
-    shelves = produce(shelves, (draftState) => {
-      draftState = draftState.filter(
-        (book) => !(book.id === bookId && book.userId === userId)
-      );
-      return draftState;
-    });
+    shelves = structuredClone(
+      shelves.filter((book) => !(book.id === bookId && book.userId === userId))
+    );
   }
   static updateBookshelf(
     userId: string,
@@ -117,10 +111,7 @@ class Bookshelves {
     Bookshelves.insertBook(userId, bookId, volumeInfo, shelf);
   }
   static refreshBookshelf(): void {
-    shelves = produce(shelves, (draftState) => {
-      draftState = starterBookshelves;
-      return draftState;
-    });
+    shelves = structuredClone(starterBookshelves);
   }
 }
 
