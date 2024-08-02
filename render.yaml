@@ -14,7 +14,8 @@ services:
     startCommand: "npm run start"
     buildFilter:
       ignoredPaths:
-        - "**/*.test.{ts,tsx}"
+        - "**/*.test.ts"
+        - "**/*.test.tsx"
     # If you have your own custom domains, uncomment below and replace with your own domains
     # domains:
     #   - example.com
