@@ -10,8 +10,7 @@
   "scripts": {
     "start": "ts-node server/index.ts",
     "dev": "ts-node-dev server/index.ts --debug",
-    "test": "jest --watchAll",
-    "build": "chmod +x build.sh && ./build.sh"
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
