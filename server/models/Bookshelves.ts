@@ -5,7 +5,11 @@ import { stripHtml } from "string-strip-html";
  * that we are committing to git. However, for the purposes of demonstrating
  * the front-end of student portfolio piece, this works fine.
  */
-import starterBookshelves from "../assets/starterBookshelves";
+import {
+  setStartBookshelves,
+  getStartBookshelves,
+} from "../assets/starterBookshelves";
+
 let shelves = [] as IBook[];
 
 type ShelfTypes = "wantToRead" | "currentlyReading" | "read";
@@ -110,11 +114,13 @@ class Bookshelves {
     Bookshelves.deleteBook(userId, bookId);
     Bookshelves.insertBook(userId, bookId, volumeInfo, shelf);
   }
+  static async initialBookshelf(): Promise<void> {
+    await setStartBookshelves();
+    shelves = getStartBookshelves();
+  }
   static refreshBookshelf(): void {
-    shelves = structuredClone(starterBookshelves);
+    shelves = getStartBookshelves();
   }
 }
-
-Bookshelves.refreshBookshelf();
 
 export default Bookshelves;

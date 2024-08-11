@@ -1,14 +1,23 @@
 import request from "supertest";
 import app from "../app";
 import { generateAccessToken } from "../services/authServices";
-import books from "../assets/starterBookshelves";
+import {
+  setStartBookshelves,
+  getStartBookshelves,
+} from "../assets/starterBookshelves";
+import Bookshelves from "../models/Bookshelves";
+
+beforeAll(async () => {
+  await setStartBookshelves();
+  Bookshelves.refreshBookshelf();
+});
 
 it("should return a 404 if book is not found", async () => {
   await request(app).get("/api/book/invalid").send().expect(404);
 });
 
 it("should return the book with the shelf if the book is in the user's bookshelf", async () => {
-  const { id, title, shelf, userId } = books[0];
+  const { id, title, shelf, userId } = getStartBookshelves()[0];
   const token = generateAccessToken(userId);
 
   const { body } = await request(app)
@@ -27,7 +36,7 @@ it("should return the book with the shelf if the book is in the user's bookshelf
 // TODO book's description stripped HTML tags
 
 it("should not return the user id in the response", async () => {
-  const { id, userId } = books[0];
+  const { id, userId } = getStartBookshelves()[0];
   const token = generateAccessToken(userId);
 
   const { body } = await request(app)
@@ -52,7 +61,7 @@ it("should return the book without the shelf if the book is not in user's the bo
 });
 
 it("should return the book without the shelf if the user has not logged in", async () => {
-  const { id, title } = books[0];
+  const { id, title } = getStartBookshelves()[0];
 
   const { body } = await request(app).get(`/api/book/${id}`).send().expect(200);
 

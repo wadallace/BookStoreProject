@@ -2,7 +2,14 @@ import request from "supertest";
 import app from "../app";
 import Bookshelves, { IVolume, IBook } from "../models/Bookshelves";
 import { generateAccessToken } from "../services/authServices";
-import books from "../assets/starterBookshelves";
+import {
+  setStartBookshelves,
+  getStartBookshelves,
+} from "../assets/starterBookshelves";
+
+beforeAll(async () => {
+  await setStartBookshelves();
+});
 
 beforeEach(() => {
   Bookshelves.refreshBookshelf();
@@ -46,7 +53,7 @@ describe("GET /api/bookshelf/", () => {
       .send()
       .expect(200);
 
-    const userBooks: string[] = books
+    const userBooks: string[] = getStartBookshelves()
       .filter((book: IBook) => book.userId === userId)
       .map((book: IBook): string => book.id);
 
