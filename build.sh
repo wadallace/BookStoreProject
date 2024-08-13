@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "Starting build"
 
-npm install --omit=dev
+npm ci --omit=dev
 
-pushd client
-npm install --omit=dev --legacy-peer-deps
+cd client
+npm ci --include=dev
 npm run build
-popd
+rm -rf client/node_modules/
+cd ../
 
 echo "Build complete"

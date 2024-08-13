@@ -1,5 +1,10 @@
 import Bookshelves from "./Bookshelves";
+import { setStartBookshelves } from "../assets/starterBookshelves";
 import testBook from "../tests/data/books";
+
+beforeAll(async () => {
+  await setStartBookshelves();
+});
 
 beforeEach(() => {
   Bookshelves.refreshBookshelf();

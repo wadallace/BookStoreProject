@@ -1,4 +1,3 @@
-import produce from "immer";
 import { stripHtml } from "string-strip-html";
 
 /**
@@ -6,7 +5,11 @@ import { stripHtml } from "string-strip-html";
  * that we are committing to git. However, for the purposes of demonstrating
  * the front-end of student portfolio piece, this works fine.
  */
-import starterBookshelves from "../assets/starterBookshelves";
+import {
+  setStartBookshelves,
+  getStartBookshelves,
+} from "../assets/starterBookshelves";
+
 let shelves = [] as IBook[];
 
 type ShelfTypes = "wantToRead" | "currentlyReading" | "read";
@@ -94,18 +97,13 @@ class Bookshelves {
       userId,
       shelf,
     };
-    shelves = produce(shelves, (draftState) => {
-      draftState.push(book);
-      return draftState;
-    });
+    shelves = structuredClone(shelves);
+    shelves.push(book);
   }
   static deleteBook(userId: string, bookId: string): void {
-    shelves = produce(shelves, (draftState) => {
-      draftState = draftState.filter(
-        (book) => !(book.id === bookId && book.userId === userId)
-      );
-      return draftState;
-    });
+    shelves = structuredClone(
+      shelves.filter((book) => !(book.id === bookId && book.userId === userId))
+    );
   }
   static updateBookshelf(
     userId: string,
@@ -116,14 +114,13 @@ class Bookshelves {
     Bookshelves.deleteBook(userId, bookId);
     Bookshelves.insertBook(userId, bookId, volumeInfo, shelf);
   }
+  static async initialBookshelf(): Promise<void> {
+    await setStartBookshelves();
+    shelves = getStartBookshelves();
+  }
   static refreshBookshelf(): void {
-    shelves = produce(shelves, (draftState) => {
-      draftState = starterBookshelves;
-      return draftState;
-    });
+    shelves = getStartBookshelves();
   }
 }
-
-Bookshelves.refreshBookshelf();
 
 export default Bookshelves;
