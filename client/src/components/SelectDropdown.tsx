@@ -11,7 +11,9 @@ export default function MenuDefault() {
     <div>
       <Menu>
         <MenuHandler>
-          <Button size='sm'>Add to Bookshelf</Button>
+          <Button size='sm'>
+            <span className='text-nowrap'>Add book</span>
+          </Button>
         </MenuHandler>
         <MenuList>
           <MenuItem>Currently Reading</MenuItem>
