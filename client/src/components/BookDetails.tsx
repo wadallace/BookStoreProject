@@ -29,6 +29,7 @@ const BookDetails: React.FC<BookDetailsProps> = ({
     <>
       <Button
         variant='outlined'
+        size='sm'
         onClick={handleOpen}
       >
         About This Book
