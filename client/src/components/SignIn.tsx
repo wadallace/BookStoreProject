@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useAuth } from '../context/authContext'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import {
@@ -11,27 +10,54 @@ import {
   Input,
   Button,
 } from '@material-tailwind/react'
+import { AuthContext } from '../context/AuthContext'
 
-const SignIn = () => {
+interface ILoginResponse {
+  message?: string
+  token?: string
+  expiry?: number
+}
+
+const SignIn: React.FC = () => {
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [error, setError] = useState<string>('')
-  const { login } = useAuth()
+  const authContext = useContext(AuthContext)
+
+  if (!authContext) {
+    throw new Error('AuthContext must be used within an AuthContextProvider')
+  }
+
+  const { login } = authContext
   const navigate = useNavigate()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     try {
-      const response = await axios.post('/api/signin', { username, password })
-      login(response.data.token)
-      navigate('/') // Redirect after 2 seconds
-    } catch (error) {
-      if (axios.isAxiosError(error) && error.response) {
-        setError('Error signing in. Please try again.')
-      } else {
-        setError('An unexpected error occurred. Please try again.')
+      const { data } = await axios.post<ILoginResponse>(
+        '/api/signin',
+        {
+          username,
+          password,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+
+      if (!data?.token) {
+        throw new Error('Missing access token in login response')
       }
+
+      login(data.token)
+
+      navigate('/', { replace: true })
+    } catch (error) {
+      console.error(error)
+      setError('Login failed. Please try again.')
     }
   }
 

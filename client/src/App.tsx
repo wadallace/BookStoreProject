@@ -1,14 +1,21 @@
 import './App.css'
 import NavBarWithSearch from './components/NavbarWithSearch'
-import { useState } from 'react'
-import Search from './components/Search'
+import { useContext, useState } from 'react'
 import SignIn from './components/SignIn'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { useAuth } from './context/authContext'
+import MyBookshelf from './components/MyBookshelf'
+import Search from './components/Search'
+import { AuthContext } from './context/AuthContext'
 
 function App() {
-  const { isAuthenticated } = useAuth()
+  const authContext = useContext(AuthContext)
   const [searchTerm, setSearchTerm] = useState('')
+
+  if (!authContext) {
+    throw new Error('AuthContext must be used within an AuthContextProvider')
+  }
+
+  const { isAuthenticated } = authContext
 
   return (
     <>
@@ -25,6 +32,12 @@ function App() {
         />
         <Route
           path='/'
+          element={
+            isAuthenticated ? <MyBookshelf /> : <Navigate to='/signin' />
+          }
+        />
+        <Route
+          path='/search'
           element={
             isAuthenticated ? (
               <Search searchTerm={searchTerm} />

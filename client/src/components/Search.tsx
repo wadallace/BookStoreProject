@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import SelectDropdown from './SelectDropdown' // Adjust the path as necessary
-import BookDetails from './BookDetails' // Adjust the path as necessary
+import SelectDropdown from './SelectDropdown'
+import BookDetails from './BookDetails'
 
 interface SearchProps {
   searchTerm: string

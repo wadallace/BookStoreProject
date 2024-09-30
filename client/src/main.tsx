@@ -4,15 +4,17 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 import { ThemeProvider } from '@material-tailwind/react'
-import { AuthProvider } from './context/AuthProvider'
+import { AuthContextProvider } from './context/AuthContext'
+
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider>
       <BrowserRouter>
-        <AuthProvider>
+        <AuthContextProvider>
           <App />
-        </AuthProvider>
+        </AuthContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>

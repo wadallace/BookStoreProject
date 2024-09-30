@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   Navbar,
   Collapse,
@@ -19,6 +20,7 @@ const NavBarWithSearch: React.FC<NavBarWithSearchProps> = ({
   onSearchChange,
 }) => {
   const [inputValue, setInputValue] = useState(searchTerm)
+  const navigate = useNavigate()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
@@ -27,6 +29,11 @@ const NavBarWithSearch: React.FC<NavBarWithSearchProps> = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     onSearchChange(inputValue)
+    navigate('/search', { state: { searchTerm: inputValue } })
+  }
+
+  const handleClick = () => {
+    navigate('/')
   }
 
   const [openNav, setOpenNav] = useState(false)
@@ -61,12 +68,12 @@ const NavBarWithSearch: React.FC<NavBarWithSearchProps> = ({
           />
         </svg>
 
-        <a
-          href='#'
+        <button
+          onClick={handleClick}
           className='flex items-center'
         >
           My Bookshelf
-        </a>
+        </button>
       </Typography>
     </ul>
   )
@@ -127,9 +134,8 @@ const NavBarWithSearch: React.FC<NavBarWithSearchProps> = ({
             </Button>
           </form>
           <div className='ml-2 pl-6'>
-          <AvatarDropdown />
+            <AvatarDropdown />
           </div>
-          
         </div>
         <IconButton
           variant='text'

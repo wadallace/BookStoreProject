@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {
   Avatar,
   Button,
@@ -12,8 +12,8 @@ import {
 import React from 'react'
 import userProfileImage from '../assets/userprofile.png'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../context/authContext'
 import { profileMenuItems } from './profileMenuItems'
+import { AuthContext } from '../context/AuthContext'
 
 export function AvatarDropdown() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,8 +21,13 @@ export function AvatarDropdown() {
   const closeMenu = () => setIsMenuOpen(false)
 
   const navigate = useNavigate()
+  const authContext = useContext(AuthContext)
 
-  const { logout } = useAuth()
+  if (!authContext) {
+    throw new Error('AuthContext must be used within an AuthContextProvider')
+  }
+
+  const { logout } = authContext
 
   const handleSignOut = () => {
     logout()
